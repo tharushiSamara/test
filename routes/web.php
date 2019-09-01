@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Auth::routes(['verify' => true]); //authentication routes with email verification
+Route::get('/', 'Auth\LoginController@showLoginForm')->name('root');  //site root shows the login form
+Auth::routes(['verify' => true]);                                     //authentication routes with email verification
 
 Route::get('/home', 'HomeController@index')->name('home');
