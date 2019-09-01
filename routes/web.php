@@ -13,7 +13,6 @@
 
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('root');  //site root shows the login form
 Auth::routes(['verify' => true]);                                     //authentication routes with email verification
-Route::get('/a',function(){
-    return view('layouts.app');
-});
+
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/language/{locale}','LanguageController@changeLanguage');

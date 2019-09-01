@@ -103,7 +103,7 @@
             <li class="nav-item  class=" active>
               <a class=" nav-link " href="{{  url('/') }}"> 
                 <i class="ni ni-tv-2 text-primary"></i>
-                Dashboard
+                {{ __('menu.Dashboard') }}
               </a>
             </li>
             @yield('sidebar')
@@ -177,9 +177,9 @@
                   <i class="ni ni-single-02"></i>
                   <span>My profile</span>
                 </a>
-                <a href="../examples/profile.html" class="dropdown-item">
+                <a href="{!! App::getLocale()=='en' ? '/language/si' : '/language/en' !!}" class="dropdown-item">
                   <i class="ni ni-settings-gear-65"></i>
-                  <span>Settings</span>
+                  <span>{{ __('menu.Language') }}</span>
                 </a>
                 <a href="../examples/profile.html" class="dropdown-item">
                   <i class="ni ni-calendar-grid-58"></i>
