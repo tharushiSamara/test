@@ -37,7 +37,8 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware(['auth'=>'verified']);  //checking for email verification
+        $this->middleware('admin');               //allow if user is admin
     }
 
 
