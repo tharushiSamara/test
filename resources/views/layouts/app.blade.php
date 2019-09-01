@@ -8,7 +8,7 @@
     {{-- Favicon --}}
     <link href="{{ asset('assets/img/brand/favicon.png')}}" rel="icon" type="image/png">
     {{-- Fonts --}}
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="{{ asset('assets/css/open-sans.css') }}" rel="stylesheet">
     {{-- Icons --}}
     <link href="{{ asset('assets/js/plugins/nucleo/css/nucleo.css')}}" rel="stylesheet" />
     <link href="{{ asset('assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet" />
@@ -42,7 +42,7 @@
             <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="../assets/img/theme/team-4-800x800.jpg">
+                  <img alt="Image placeholder" src="{{ asset('assets/img/theme/girl.png')}}">
                 </span>
               </div>
             </a>
@@ -158,10 +158,10 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="profile pic" src="{{ asset('assets/img/theme/team-4-800x800.jpg') }}">
+                    <img alt="profile pic" src="{{ asset('assets/img/theme/girl.png') }}">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">
+                    <span class="mb-0  font-weight-bold">
                       {{ Auth::user()->userName }}
                     </span>
                   </div>
@@ -343,7 +343,6 @@
               <div class="copyright text-center text-xl-left text-muted">
                 &copy; 2019 <a href="#" class="font-weight-bold ml-1" target="_blank">E-Crew</a>
               </div>
-            </div>
             </div>
           </div>
         </footer>
