@@ -26,6 +26,9 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+    protected $maxAttempts = 2;         // setting maximum Attempts for login
+    protected $decayMinutes = 1;        // setting account throttling to 1 minute
+
 
     /**
      * Create a new controller instance.
@@ -35,5 +38,16 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+      /**
+     * overriding login username to userName from email
+     * override file evendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return 'userName';
     }
 }

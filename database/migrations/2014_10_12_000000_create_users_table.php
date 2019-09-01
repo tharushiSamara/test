@@ -14,13 +14,18 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->bigIncrements('id');                                    //primary key
+            $table->string('email')->unique();                              //email used for account varification and password rest
+            $table->string('password');                                     //password
+            $table->string('name');                                         //user's original name
+            $table->string('userName')->unique();                           //user-name for login purpose
+            $table->string('role')->default('employee');                    //employee role admin or employee
+            $table->boolean('status')->default(1);                          //status to block and unblock account
+            $table->bigInteger('adminId')->unsigned()->nullable();          //which admin added the employee?
+            $table->timestamp('email_verified_at')->nullable();             //is email verified time
+            $table->rememberToken();                                        //remembertoken for remember while the login
+            $table->timestamps();                                           //account created and status updated time
+            $table->foreign('adminId')->references('id')->on('users');      //admin id is FK of users table
         });
     }
 

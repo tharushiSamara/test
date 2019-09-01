@@ -40,6 +40,27 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+
+    /**
+     * overriding registerfuntion
+     * 
+     *
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        //$this->guard()->login($user);  //autologin after registration dissabled
+
+        return redirect($this->redirectPath());
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -50,6 +71,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'userName' => ['required', 'string', 'max:255', 'unique:users'],   //user name should be unique
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -65,8 +87,11 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'userName'=> $data['userName'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            //'adminId' => $data['adminId']                    //setting up adminId FK
+
         ]);
     }
 }
