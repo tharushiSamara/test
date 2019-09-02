@@ -117,6 +117,10 @@ return [
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
 
+    // custom
+    'PasswordConfirmation' => 'Invalid password provided',
+    'PasswordDistinct'=>'Can\'t use current password again',
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

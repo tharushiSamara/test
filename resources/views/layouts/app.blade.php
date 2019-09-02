@@ -58,16 +58,16 @@
                 <i class="ni ni-settings-gear-65"></i>
                 <span>Settings</span>
               </a>
-              <a href="./examples/profile.html" class="dropdown-item">
-                <i class="ni ni-calendar-grid-58"></i>
-                <span>Activity</span>
+            <a href="{{route('change-password')}}" class="dropdown-item">
+                <i class="ni ni-lock-circle-open"></i>
+                <span>Change Password</span>
               </a>
               <a href="./examples/profile.html" class="dropdown-item">
                 <i class="ni ni-support-16"></i>
                 <span>Support</span>
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#!" class="dropdown-item" href="{{ route('logout') }}"
+              <a href="#" class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                 <i class="ni ni-user-run"></i>
@@ -181,9 +181,9 @@
                   <i class="ni ni-settings-gear-65"></i>
                   <span>{{ __('menu.Language') }}</span>
                 </a>
-                <a href="../examples/profile.html" class="dropdown-item">
-                  <i class="ni ni-calendar-grid-58"></i>
-                  <span>Activity</span>
+              <a href="{{route('change-password')}}" class="dropdown-item">
+                  <i class="ni ni-lock-circle-open"></i>
+                  <span>Change Password</span>
                 </a>
                 <a href="../examples/profile.html" class="dropdown-item">
                   <i class="ni ni-support-16"></i>
@@ -196,6 +196,9 @@
                   <i class="ni ni-user-run"></i>
                   <span>Logout</span>
                 </a>
+                
+                
+                
                 
                 {{-- logout post --}}
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
