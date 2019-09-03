@@ -14,7 +14,9 @@
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('root');  //site root shows the login form
 Auth::routes(['verify' => true]);                                     //authentication routes with email verification
 Route::get('/change-password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('change-password'); //show change password form
-
+Route::get('/profile', function () {
+    return view('profile.myProfile');
+})->name('my-profile');
 Route::name('password.')->group(function () {
     Route::post('change-password/{useId}', 'Auth\ChangePasswordController@changePassword')->name('change'); //password reset post
 });
