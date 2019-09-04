@@ -3,31 +3,11 @@
 @section('title','Dashboard')
 
 @section('sidebar')
-<li class="nav-item">
-	<a class="nav-link " href="./examples/icons.html">
-		<i class="ni ni-planet text-blue"></i> Icons
-	</a>
-</li>
-<li class="nav-item">
-	<a class="nav-link " href="./examples/maps.html">
-		<i class="ni ni-pin-3 text-orange"></i> Maps
-	</a>
-</li>
-<li class="nav-item">
-	<a class="nav-link " href="./examples/profile.html">
-		<i class="ni ni-single-02 text-yellow"></i> User profile
-	</a>
-</li>
-<li class="nav-item">
-	<a class="nav-link " href="./examples/tables.html">
-		<i class="ni ni-bullet-list-67 text-red"></i> Tables
-	</a>
-</li>
-<li class="nav-item">
-	<a class="nav-link" href="./examples/login.html">
-		<i class="ni ni-key-25 text-info"></i> Login
-	</a>
-</li>
+@if (Auth::user()->role=='admin')
+@include('admin.include.sidebar')
+@else
+@include('employee.include.sidebar')
+@endif
 @endsection
 
 @section('header')
@@ -95,7 +75,8 @@
 						<i class="ni education_hat mr-2"></i>University of Computer Science
 					</div>
 					<hr class="my-4">
-					<p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all
+					<p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and
+						records all
 						of his own music.</p>
 					<a href="#">Show more</a>
 				</div>
@@ -138,15 +119,17 @@
 							<div class="col-lg-6">
 								<div class="form-group focused">
 									<label class="form-control-label" for="input-first-name">First name</label>
-									<input type="text" id="input-first-name" class="form-control form-control-alternative"
-										placeholder="First name" value="Lucky">
+									<input type="text" id="input-first-name"
+										class="form-control form-control-alternative" placeholder="First name"
+										value="Lucky">
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group focused">
 									<label class="form-control-label" for="input-last-name">Last name</label>
-									<input type="text" id="input-last-name" class="form-control form-control-alternative"
-										placeholder="Last name" value="Jesse">
+									<input type="text" id="input-last-name"
+										class="form-control form-control-alternative" placeholder="Last name"
+										value="Jesse">
 								</div>
 							</div>
 						</div>
@@ -159,7 +142,8 @@
 							<div class="col-md-12">
 								<div class="form-group focused">
 									<label class="form-control-label" for="input-address">Address</label>
-									<input id="input-address" class="form-control form-control-alternative" placeholder="Home Address"
+									<input id="input-address" class="form-control form-control-alternative"
+										placeholder="Home Address"
 										value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
 								</div>
 							</div>
@@ -168,8 +152,8 @@
 							<div class="col-lg-4">
 								<div class="form-group focused">
 									<label class="form-control-label" for="input-city">City</label>
-									<input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City"
-										value="New York">
+									<input type="text" id="input-city" class="form-control form-control-alternative"
+										placeholder="City" value="New York">
 								</div>
 							</div>
 							<div class="col-lg-4">
@@ -182,8 +166,8 @@
 							<div class="col-lg-4">
 								<div class="form-group">
 									<label class="form-control-label" for="input-country">Postal code</label>
-									<input type="number" id="input-postal-code" class="form-control form-control-alternative"
-										placeholder="Postal code">
+									<input type="number" id="input-postal-code"
+										class="form-control form-control-alternative" placeholder="Postal code">
 								</div>
 							</div>
 						</div>

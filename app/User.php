@@ -36,4 +36,10 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function admin()
+    {
+        return $this->belongsTo('App\User', 'adminId', 'id');   //each employee registered by an admin
+                                                                //one admin belongs to many employees
+    }
 }

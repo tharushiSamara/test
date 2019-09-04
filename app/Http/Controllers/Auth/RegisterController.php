@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -94,7 +95,7 @@ class RegisterController extends Controller
             'userName'=> $data['userName'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            //'adminId' => $data['adminId']                    //setting up adminId FK
+            'adminId' => Auth::user()->id,                   //setting up adminId FK
 
         ]);
     }

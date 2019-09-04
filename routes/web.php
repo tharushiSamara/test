@@ -17,6 +17,10 @@ Route::get('/change-password', 'Auth\ChangePasswordController@showChangePassword
 Route::get('/profile', function () {
     return view('profile.myProfile');
 })->name('my-profile');
+Route::get('/employee-profile/{id}', 'AdminController@employeeProfile')->name('employee-profile');
+Route::get('/mangae-employee', 'AdminController@manageEmployee')->name('manage-employee');
+
+
 Route::name('password.')->group(function () {
     Route::post('change-password/{useId}', 'Auth\ChangePasswordController@changePassword')->name('change'); //password reset post
 });
