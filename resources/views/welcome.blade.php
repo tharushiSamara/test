@@ -46,7 +46,8 @@
 					</div>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false">
 						<div class="media align-items-center">
 							<span class="avatar avatar-sm rounded-circle">
 								<img alt="Image placeholder" src="./assets/img/theme/team-1-800x800.jpg
@@ -56,7 +57,7 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
 						<div class=" dropdown-header noti-title">
-							<h6 class="text-overflow m-0">Welcome!</h6>
+							<h6 class="text-overflow m-0">Welcome! Tharu</h6>
 						</div>
 						<a href="./examples/profile.html" class="dropdown-item">
 							<i class="ni ni-single-02"></i>
@@ -93,8 +94,9 @@
 							</a>
 						</div>
 						<div class="col-6 collapse-close">
-							<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main"
-								aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+							<button type="button" class="navbar-toggler" data-toggle="collapse"
+								data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false"
+								aria-label="Toggle sidenav">
 								<span></span>
 								<span></span>
 							</button>
@@ -104,8 +106,8 @@
 				<!-- Form -->
 				<form class="mt-4 mb-3 d-md-none">
 					<div class="input-group input-group-rounded input-group-merge">
-						<input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search"
-							aria-label="Search">
+						<input type="search" class="form-control form-control-rounded form-control-prepended"
+							placeholder="Search" aria-label="Search">
 						<div class="input-group-prepend">
 							<div class="input-group-text">
 								<span class="fa fa-search"></span>
@@ -163,12 +165,14 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
+						<a class="nav-link"
+							href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
 							<i class="ni ni-palette"></i> Foundation
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
+						<a class="nav-link"
+							href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
 							<i class="ni ni-ui-04"></i> Components
 						</a>
 					</li>
@@ -345,16 +349,16 @@
 								<div class="col">
 									<ul class="nav nav-pills justify-content-end">
 										<li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"
-											data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$"
-											data-suffix="k">
+											data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}'
+											data-prefix="$" data-suffix="k">
 											<a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
 												<span class="d-none d-md-block">Month</span>
 												<span class="d-md-none">M</span>
 											</a>
 										</li>
 										<li class="nav-item" data-toggle="chart" data-target="#chart-sales"
-											data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$"
-											data-suffix="k">
+											data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}'
+											data-prefix="$" data-suffix="k">
 											<a href="#" class="nav-link py-2 px-3" data-toggle="tab">
 												<span class="d-none d-md-block">Week</span>
 												<span class="d-md-none">W</span>
@@ -527,8 +531,9 @@
 												<span class="mr-2">60%</span>
 												<div>
 													<div class="progress">
-														<div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60"
-															aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+														<div class="progress-bar bg-gradient-danger" role="progressbar"
+															aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+															style="width: 60%;"></div>
 													</div>
 												</div>
 											</div>
@@ -546,8 +551,9 @@
 												<span class="mr-2">70%</span>
 												<div>
 													<div class="progress">
-														<div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70"
-															aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+														<div class="progress-bar bg-gradient-success" role="progressbar"
+															aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+															style="width: 70%;"></div>
 													</div>
 												</div>
 											</div>
@@ -565,8 +571,9 @@
 												<span class="mr-2">80%</span>
 												<div>
 													<div class="progress">
-														<div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80"
-															aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+														<div class="progress-bar bg-gradient-primary" role="progressbar"
+															aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+															style="width: 80%;"></div>
 													</div>
 												</div>
 											</div>
@@ -584,8 +591,9 @@
 												<span class="mr-2">75%</span>
 												<div>
 													<div class="progress">
-														<div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75"
-															aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+														<div class="progress-bar bg-gradient-info" role="progressbar"
+															aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+															style="width: 75%;"></div>
 													</div>
 												</div>
 											</div>
@@ -603,8 +611,9 @@
 												<span class="mr-2">30%</span>
 												<div>
 													<div class="progress">
-														<div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30"
-															aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
+														<div class="progress-bar bg-gradient-warning" role="progressbar"
+															aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"
+															style="width: 30%;"></div>
 													</div>
 												</div>
 											</div>
@@ -621,7 +630,8 @@
 				<div class="row align-items-center justify-content-xl-between">
 					<div class="col-xl-6">
 						<div class="copyright text-center text-xl-left text-muted">
-							&copy; 2018 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative
+							&copy; 2018 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
+								target="_blank">Creative
 								Tim</a>
 						</div>
 					</div>
@@ -631,14 +641,15 @@
 								<a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
 							</li>
 							<li class="nav-item">
-								<a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
+								<a href="https://www.creative-tim.com/presentation" class="nav-link"
+									target="_blank">About Us</a>
 							</li>
 							<li class="nav-item">
 								<a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
 							</li>
 							<li class="nav-item">
-								<a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link"
-									target="_blank">MIT License</a>
+								<a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md"
+									class="nav-link" target="_blank">MIT License</a>
 							</li>
 						</ul>
 					</div>
