@@ -15,5 +15,23 @@ return [
 
     'Dashboard' => 'Dashboard',
     'Language' => 'සිංහල',
+    'Employees' => 'Employees',
+    'Employees' => 'employees',
+    'admin'=>'admin',
 
+    'User ID'=>'User ID',
+    'Employee Name'=>'Employee Name',
+    'Username'=>'Username',
+    'Email'=>'Email',
+    'Registerd By'=>'Registerd By',
+
+    'Search User ID'=>'Search User ID',
+    'Search Name'=>'Search Name',
+    'Search Username'=>'Search Username',
+    'Search Email'=>'Search Email',
+    'Search Admin'=>'Search Admin',
+
+    'My profile'=>'My profile',
+    'Logout'=>'Logout',
+    'Change Password'=>'Change Password',
 ];

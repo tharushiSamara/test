@@ -136,6 +136,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'phone'=>[
+            'regex' => 'Invalid phone number'
+        ],
     ],
 
     /*

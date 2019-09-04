@@ -15,5 +15,24 @@ return [
 
     'Dashboard' => 'උපකරණ පුවරුව',
     'Language' => 'English',
+    'Employees'=>'සේවක',
+    'employees'=>'සේවක',
+    'admin'=>'පරිපාලක',
+
+    'User ID'=>'පරිශීලක අංකය',
+    'Employee Name'=>'සේවක නාමය',
+    'Username'=>'පරිශීලක නාමය',
+    'Email'=>'විද්යුත් තැපෑල',
+    'Registerd By'=>'ලියාපදිංචි කරන ලද්දේ ',
+
+    'Search User ID'=>'පරිශීලක අංකය සෙවීම',
+    'Search Name'=>'නම සෙවීම',
+    'Search Username'=>'පරිශීලක නාමය සෙවීම',
+    'Search Email'=>'විද්යුත් තැපෑල සෙවීම',
+    'Search Admin'=>'පරිපාලක සෙවීම',
+
+    'My profile'=>'මගේ ගිණුම',
+    'Logout'=>'ඉවත්වීම',
+    'Change Password'=>'මුරපදය වෙනස් කිරීම ',
 
 ];

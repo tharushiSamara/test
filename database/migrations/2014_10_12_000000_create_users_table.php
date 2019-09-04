@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();                              //email used for account varification and password rest
             $table->string('password');                                     //password
             $table->string('name');                                         //user's original name
+            $table->string('nic', 12);                                      //nic of user
+            $table->string('phone', 12);                                    //user's telephone number
             $table->string('userName')->unique();                           //user-name for login purpose
             $table->string('role')->default('employee');                    //employee role admin or employee
             $table->boolean('status')->default(1);                          //status to block and unblock account

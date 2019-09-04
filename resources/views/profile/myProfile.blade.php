@@ -15,8 +15,9 @@
 <div class="container-fluid d-flex align-items-center">
 	<div class="row">
 		<div class="col">
-			<h1 class="display-2 text-white">{{Auth::user()->name}}</h1>
-			<p class="text-white mt-0 mb-5">Welcome <span class="text-uppercase">{{Auth::user()->role}}</span>.</p>
+			<h1 class="display-2 text-white">Welcome {{Auth::user()->name}}</h1>
+			<p class="text-white mt-0 mb-5">Access level : <span class="text-uppercase">{{Auth::user()->role}}</span>
+			</p>
 
 		</div>
 	</div>

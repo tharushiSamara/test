@@ -1,6 +1,6 @@
 <li class="nav-item">
     <a class="nav-link " href="{{route('manage-employee')}}">
-        <i class="fas fa-users text-green"></i> Employees
+        <i class="fas fa-users text-green"></i> {{__('menu.Employees')}}
     </a>
 </li>
 <li class="nav-item">

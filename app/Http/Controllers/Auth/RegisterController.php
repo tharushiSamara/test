@@ -63,7 +63,7 @@ class RegisterController extends Controller
 
         //$this->guard()->login($user);  //autologin after registration dissabled
 
-        return redirect($this->redirectPath());
+        return redirect()->route('register')->with('status', ' Employee registerd successfully');
     }
 
     /**
@@ -74,12 +74,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        return Validator::make(
+            $data,
+            [
             'name' => ['required', 'string', 'max:255'],
-            'userName' => ['required', 'string', 'max:255', 'unique:users'],   //user name should be unique
+            'userName' => ['required', 'string', 'max:255', 'unique:users'],   //   username should be unique
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'nic' => ['required','string','regex:/[0-9]{9}([x|X|v|V]$|[0-9]{3}$)/','unique:users'],     //   validation for nic
+            'phone' => ['nullable','regex:/[+94|0][0-9]{9}$/'],
+        ]
+        );
     }
 
     /**
@@ -94,8 +98,10 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'userName'=> $data['userName'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'adminId' => Auth::user()->id,                   //setting up adminId FK
+            'nic'=> $data['nic'],
+            'phone' => $data['phone'],
+            'password' => Hash::make('council@123'),         // default password
+            'adminId' => Auth::user()->id,                   // setting up adminId FK
 
         ]);
     }

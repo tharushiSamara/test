@@ -20773,7 +20773,7 @@ pre > code.highlight {
 }
 
 /*# sourceMappingURL=dashboard-free.css.map */
-
-.light-header {
-    background-color: rgb(246, 249, 252);
+/* overrides */
+.nav-link {
+    font-size: 1rem !important;
 }

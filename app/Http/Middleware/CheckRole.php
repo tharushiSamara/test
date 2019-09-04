@@ -17,7 +17,7 @@ class CheckRole
     public function handle($request, Closure $next)
     {
         if (Auth::user()->role != 'admin') {    //only allow if user is Admin
-            dd("not admin");
+            abort(403);
             return redirect('/restricted');
         }
         return $next($request);

@@ -3,6 +3,7 @@
 @push('css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="{{asset('assets/css/custom-data-table.css')}}">
+
 @endpush
 
 @section('title','Dashboard')
@@ -106,32 +107,47 @@
     <div class="col">
 
         <div class="card shadow">
-            <div class="card-header bg-transparent">
-                <h3 class="mb-0">Icons</h3>
+            <div class="card-header bg-white border-0">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h3 class="mb-0">Employee Listing</h3>
+                    </div>
+                    <div class="col-4 text-right">
+                        <a class="btn btn-icon btn-success text-white" href="{{route('register')}}">
+                            <span><i class="fas fa-user-plus"></i></span>
+                            <span class="btn-inner--text">Register</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="table-responsive py-4">
                 <table id="example" class="table  px-5">
                     <thead class="thead-light">
                         <tr>
-                            <th>UID</th>
-                            <th>Employee Name</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Registerd By</th>
+                            <th>{{__('menu.User ID')}}</th>
+                            <th>{{__('menu.Employee Name')}}</th>
+                            <th>{{__('menu.Username')}}</th>
+                            <th>{{__('menu.Email')}}</th>
+                            <th>{{__('menu.Registerd By')}}</th>
                             <th></th>
                         </tr>
                     </thead>
-                    {{-- <thead id="search_inputs">
-                    <tr>
-                        <th><input type="text" class="form-control form-control-sm" id="searchName" placeholder="Search Name"/></th>
-                        <th><input type="text" class="form-control form-control-sm" id="searchName" placeholder="Search Name"/></th>
-                        <th><input type="text" class="form-control form-control-sm" id="searchName" placeholder="Search Name"/></th>
-                        <th><input type="text" class="form-control form-control-sm" id="searchName" placeholder="Search Name"/></th>
-                        <th><input type="text" class="form-control form-control-sm" id="searchName" placeholder="Search Name"/></th>
-                        <th><input type="text" class="form-control form-control-sm" id="searchName" placeholder="Search Name"/></th>
-                    </tr>
-                </thead> --}}
+                    <thead id="search_inputs">
+                        <tr>
+                            <th><input type="text" class="form-control form-control-sm" id="searchId"
+                                    placeholder="{{__('menu.Search User ID')}}" /></th>
+                            <th><input type="text" class="form-control form-control-sm" id="searchName"
+                                    placeholder="{{__('menu.Search Name')}}" /></th>
+                            <th><input type="text" class="form-control form-control-sm" id="searchUsername"
+                                    placeholder="{{__('menu.Search Username')}}" /></th>
+                            <th><input type="text" class="form-control form-control-sm" id="searchEmail"
+                                    placeholder="{{__('menu.Search Email')}}" /></th>
+                            <th><input type="text" class="form-control form-control-sm" id="searchAdmin"
+                                    placeholder="{{__('menu.Search Admin')}}" /></th>
+                            <th></th>
+                        </tr>
+                    </thead>
                     <tbody>
                         @foreach ($employees as $employee)
                         <tr>
@@ -158,17 +174,20 @@
 
                         </tr>
                         @endforeach
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
 
+
+                    </tbody>
+                    <thead class="thead-light">
+                        <tr>
+                            <th>{{__('menu.User ID')}}</th>
+                            <th>{{__('menu.Employee Name')}}</th>
+                            <th>{{__('menu.Username')}}</th>
+                            <th>{{__('menu.Email')}}</th>
+                            <th>{{__('menu.Registerd By')}}</th>
+                            <th></th>
                         </tr>
-                    </tfoot>
+                    </thead>
+
                 </table>
             </div>
         </div>
@@ -196,12 +215,40 @@
 
         $(id+'_length select').removeClass('custom-select custom-select-sm'); //remove default classed from selector
         
-        $('#searchName').on( 'keyup', function () { //individulat column search
+        //individulat column search
+        $('#searchName').on( 'keyup', function () { 
+            table
+                .columns( 1 )
+                .search( this.value )
+                .draw();
+            });
+            $('#searchId').on( 'keyup', function () { 
             table
                 .columns( 0 )
                 .search( this.value )
                 .draw();
             });
+            $('#searchUsername').on( 'keyup', function () { 
+            table
+                .columns( 2 )
+                .search( this.value )
+                .draw();
+            });
+            $('#searchEmail').on( 'keyup', function () { 
+            table
+                .columns( 3 )
+                .search( this.value )
+                .draw();
+            });
+            $('#searchAdmin').on( 'keyup', function () { 
+            table
+                .columns( 4 )
+                .search( this.value )
+                .draw();
+            });
+
+
+
 
       } );
 

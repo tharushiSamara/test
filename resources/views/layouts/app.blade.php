@@ -16,6 +16,18 @@
 	{{-- CSS Files --}}
 	<link href="{{ asset('assets/css/argon-dashboard.css?v=1.1.0')}}" rel="stylesheet" />
 	@stack('css')
+	@if (Session::get('locale')==='si')
+	<style>
+		thead>tr>th {
+			font-size: 1rem !important;
+
+		}
+
+		.notification-title {
+			font-size: .9rem !important;
+		}
+	</style>
+	@endif
 	<title>
 		@yield('title')
 	</title>
@@ -51,11 +63,11 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
 						<div class=" dropdown-header noti-title">
-							<h6 class="text-overflow m-0">{{ Auth::user()->role }}</h6>
+							<h6 class="text-overflow m-0 notification-title">{{ Auth::user()->role }}</h6>
 						</div>
 						<a href="{{route('my-profile')}}" class="dropdown-item">
 							<i class="ni ni-single-02"></i>
-							<span>My profile</span>
+							<span>{{__('menu.My profile')}}</span>
 						</a>
 						<a href="./examples/profile.html" class="dropdown-item">
 							<i class="ni ni-settings-gear-65"></i>
@@ -63,17 +75,14 @@
 						</a>
 						<a href="{{route('change-password')}}" class="dropdown-item">
 							<i class="ni ni-lock-circle-open"></i>
-							<span>Change Password</span>
+							<span>{{__('menu.Change Password')}}</span>
 						</a>
-						<a href="./examples/profile.html" class="dropdown-item">
-							<i class="ni ni-support-16"></i>
-							<span>Support</span>
-						</a>
+
 						<div class="dropdown-divider"></div>
 						<a href="#" class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
 							<i class="ni ni-user-run"></i>
-							<span>Logout</span>
+							<span>{{__('menu.Logout')}}</span>
 						</a>
 					</div>
 				</li>
@@ -155,7 +164,7 @@
 		<nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
 			<div class="container-fluid">
 				{{-- Brand --}}
-				<a class="h4 mb-0 text-white  d-none d-lg-inline-block" href="{{ url()->previous() }}">
+				<a class="h4 mb-0 text-white  d-none d-lg-inline-block" href="javascript:history.back()">
 					<span> <i class="ni ni-bold-left"></i></span>
 				</a>
 
@@ -177,13 +186,13 @@
 						</a>
 						<div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
 							<div class=" dropdown-header noti-title">
-								<h6 class="text-overflow m-0">
-									{{ Auth::user()->role }}
+								<h6 class="text-overflow m-0 notification-title">
+									{{ __('menu.'.Auth::user()->role) }}
 								</h6>
 							</div>
 							<a href="{{route('my-profile')}}" class="dropdown-item">
 								<i class="ni ni-single-02"></i>
-								<span>My profile</span>
+								<span>{{__('menu.My profile')}}</span>
 							</a>
 							<a href="{!! App::getLocale()=='en' ? '/language/si' : '/language/en' !!}"
 								class="dropdown-item">
@@ -192,17 +201,14 @@
 							</a>
 							<a href="{{route('change-password')}}" class="dropdown-item">
 								<i class="ni ni-lock-circle-open"></i>
-								<span>Change Password</span>
+								<span>{{__('menu.Change Password')}}</span>
 							</a>
-							<a href="../examples/profile.html" class="dropdown-item">
-								<i class="ni ni-support-16"></i>
-								<span>Support</span>
-							</a>
+
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
 								<i class="ni ni-user-run"></i>
-								<span>Logout</span>
+								<span>{{__('menu.Logout')}}</span>
 							</a>
 
 
@@ -241,11 +247,11 @@
 
 
 			{{-- Footer --}}
-			<footer class="footer">
+			<footer class="footer pt-9">
 				<div class="row align-items-center justify-content-xl-between">
 					<div class="col-xl-6">
 						<div class="copyright text-center text-xl-left text-muted">
-							&copy; 2019 <a href="#" class="font-weight-bold ml-1" target="_blank">E-Crew</a>
+							&copy; 2019 <a href="#" class="font-weight-bold ml-1" target="_blank">Ē-Crew</a>
 						</div>
 					</div>
 				</div>
