@@ -77,7 +77,7 @@ class RegisterController extends Controller
         return Validator::make(
             $data,
             [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required','alpha', 'string', 'max:255'],
             'userName' => ['required', 'string', 'max:255', 'unique:users'],   //   username should be unique
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'nic' => ['required','string','regex:/[0-9]{9}([x|X|v|V]$|[0-9]{3}$)/','unique:users'],     //   validation for nic

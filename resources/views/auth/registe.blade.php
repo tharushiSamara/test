@@ -105,13 +105,13 @@
 <div class="row">
 	<div class="col">
 
-		<div class="card shadow">
-			<div class="card-header bg-transparent">
+		<div class="card bg-secondary shadow">
+			<div class="card-header bg-white border-0">
 				<h3 class="mb-0"><span class="text-uppercase">Register Employee</span></h3>
 			</div>
 
 
-			<div class="card-body ">
+			<div class="card-body">
 
 				@if (session('status'))
 				<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -128,8 +128,8 @@
 					<div class="form-group row pt-3">
 						<label for="example-text-input" class="col-md-2 col-form-label form-control-label ">Name</label>
 						<div class="col-md-10 ">
-							<input class="form-control @error('name') is-invalid  @enderror" type="text" value="{{old('name')}}"
-								id="name" name="name">
+							<input class="form-control @error('name') is-invalid  @enderror" type="text"
+								value="{{old('name')}}" id="name" name="name">
 							@error('name')
 							<span class="invalid-feedback" role="alert">
 								<strong>{{ $message }}</strong>
@@ -138,7 +138,8 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="example-search-input" class="col-md-2 col-form-label form-control-label">Username</label>
+						<label for="example-search-input"
+							class="col-md-2 col-form-label form-control-label">Username</label>
 						<div class="col-md-10">
 							<input class="form-control @error('userName') is-invalid @enderror" type="text"
 								value="{{old('userName')}}" id="userName" name="userName">
@@ -150,10 +151,11 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="example-email-input" class="col-md-2 col-form-label form-control-label">Email</label>
+						<label for="example-email-input"
+							class="col-md-2 col-form-label form-control-label">Email</label>
 						<div class="col-md-10">
-							<input class="form-control @error('email') is-invalid @enderror" type="email" value="{{old('email')}}"
-								id="email" name="email">
+							<input class="form-control @error('email') is-invalid @enderror" type="email"
+								value="{{old('email')}}" id="email" name="email">
 							@error('email')
 							<span class="invalid-feedback" role="alert">
 								<strong>{{ $message }}</strong>
@@ -164,8 +166,8 @@
 					<div class="form-group row">
 						<label for="example-week-input" class="col-md-2 col-form-label form-control-label">NIC</label>
 						<div class="col-md-10">
-							<input class="form-control @error('nic') is-invalid @enderror" type="text" value="{{old('nic')}}" id="nic"
-								name="nic">
+							<input class="form-control @error('nic') is-invalid @enderror" type="text"
+								value="{{old('nic')}}" id="nic" name="nic">
 							@error('nic')
 							<span class="invalid-feedback" role="alert">
 								<strong>{{ $message }}</strong>
@@ -177,8 +179,8 @@
 						<label for="example-time-input" class="col-md-2 col-form-label form-control-label">Phone
 							No</label>
 						<div class="col-md-10">
-							<input class="form-control @error('phone') is-invalid @enderror" type="text" value="{{old('phone')}}"
-								id="phone" name="phone">
+							<input class="form-control @error('phone') is-invalid @enderror" type="text"
+								value="{{old('phone')}}" id="phone" name="phone">
 							@error('phone')
 							<span class="invalid-feedback" role="alert">
 								<strong>{{ $message }}</strong>
