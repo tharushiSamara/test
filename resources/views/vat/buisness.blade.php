@@ -2,6 +2,11 @@
 
 @section('title','Industrial Tax')
 
+@section('sidebar')
+@includeWhen(Auth::user()->role=='admin','admin.include.sidebar')
+@includeWhen(Auth::user()->role=='employee','employee.include.sidebar')
+@endsection
+
 @section('header')
 <div class="col-xl-3 col-lg-6">
     <div class="card card-stats mb-4 mb-xl-0">

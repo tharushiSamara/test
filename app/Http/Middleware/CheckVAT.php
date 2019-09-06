@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Str;
+
 use Closure;
 use App\Vat;
 use Auth;
@@ -25,7 +27,7 @@ class CheckVAT
         // dd($authorizedRoutes->all());
 
         foreach ($authorizedRoutes->all() as $route) {
-            if ($route==$request->path()) {                                         //allowing user if only has given accessess to vat category
+            if (Str::startsWith($request->path(), $route)) {                        //allowing user if only has given accessess to vat category
                 return $next($request);                                             // dd($request->path()); gives the requested path from url
             }
         }

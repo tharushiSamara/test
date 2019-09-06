@@ -32,6 +32,7 @@ Route::get('/mangae-employee', 'AdminController@manageEmployee')->name('manage-e
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/language/{locale}', 'LanguageController@changeLanguage');  //language switcher
 
-foreach (Vat::all() as $vat) {
-    Route::get('/'.$vat->route, 'VatPagesController@'.$vat->route);
+
+foreach (Vat::all() as $vat) {      //routes for all vat categories, VatPagesController contains methodes which show the forms
+    Route::get('/'.$vat->route, 'VatPagesController@'.$vat->route)->name($vat->route);
 }
