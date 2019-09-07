@@ -9,7 +9,7 @@ services:
 
 before_script:
   - cp .env.travis .env
-  - mysql -e 'create database smart-vat;'
+  - mysql -e 'create database smartvat;'
   - composer install
   - php artisan key:generate
   - php artisan migrate --seed
