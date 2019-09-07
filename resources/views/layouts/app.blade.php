@@ -53,8 +53,7 @@
 			{{-- User --}}
 			<ul class="nav align-items-center d-md-none">
 				<li class="nav-item dropdown">
-					<a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">
+					<a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<div class="media align-items-center">
 							<span class="avatar avatar-sm rounded-circle">
 								<img alt="Image placeholder" src="{{ asset('assets/img/theme/girl.png')}}">
@@ -99,9 +98,8 @@
 							</a>
 						</div>
 						<div class="col-6 collapse-close">
-							<button type="button" class="navbar-toggler" data-toggle="collapse"
-								data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false"
-								aria-label="Toggle sidenav">
+							<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main"
+								aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
 								{{-- close button --}}
 								<span></span>
 								<span></span>
@@ -137,15 +135,13 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link"
-							href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
+						<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
 							<i class="ni ni-palette"></i>
 							Foundation
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link"
-							href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
+						<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
 							<i class="ni ni-ui-04"></i>
 							Components
 						</a>
@@ -194,8 +190,7 @@
 								<i class="ni ni-single-02"></i>
 								<span>{{__('menu.My profile')}}</span>
 							</a>
-							<a href="{!! App::getLocale()=='en' ? '/language/si' : '/language/en' !!}"
-								class="dropdown-item">
+							<a href="{!! App::getLocale()=='en' ? '/language/si' : '/language/en' !!}" class="dropdown-item">
 								<i class="ni ni-settings-gear-65"></i>
 								<span>{{ __('menu.Language') }}</span>
 							</a>

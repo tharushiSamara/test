@@ -19,18 +19,20 @@ use App\Vat;
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('root');  //site root shows the login form
 Auth::routes(['verify' => true]);                                     //authentication routes with email verification
 Route::get('/change-password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('change-password'); //show change password form
-Route::get('/profile', function () {
-    return view('profile.myProfile');
-})->name('my-profile');
-Route::name('password.')->group(function () {
-    Route::post('change-password/{useId}', 'Auth\ChangePasswordController@changePassword')->name('change'); //password reset post
-});
+Route::name('password.')->group(
+    function () {
+        Route::post('change-password/{useId}', 'Auth\ChangePasswordController@changePassword')->name('change'); //password reset post
+    }
+);
+
+
 
 /**
  * Routes related to admin
 */
 Route::get('/employee-profile/{id}', 'AdminController@employeeProfile')->name('employee-profile');
 Route::get('/mangae-employee', 'AdminController@manageEmployee')->name('manage-employee');
+Route::post('/assign-vat', 'AdminController@assignVatCategories')->name('assign-vat');
 
 
 /**
@@ -38,6 +40,8 @@ Route::get('/mangae-employee', 'AdminController@manageEmployee')->name('manage-e
 */
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/language/{locale}', 'LanguageController@changeLanguage');  //language switcher
+Route::get('/profile', 'EmployeeController@myProfile')->name('my-profile');
+
 
 
 /**

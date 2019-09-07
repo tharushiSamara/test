@@ -1,33 +1,47 @@
 <?php
 
-namespace App\Http\Controllers;
+use Illuminate\Database\Seeder;
 
-use Illuminate\Http\Request;
-use Auth;
-
-class HomeController extends Controller
+class VatsTableSeeder extends Seeder
 {
     /**
-     * Create a new controller instance.
+     * Run the database seeds.
      *
      * @return void
      */
-    public function __construct()
+    public function run()
     {
-        $this->middleware(['auth'=>'verified']);  //checking for email verification
-    }
+        DB::table('vats')->insert([
+            'name' => 'Buisness Tax',
+            //vat and fine refered on seperate table
+            'route'=> 'buisness'
+        ]);
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        if (Auth::user()->role === 'admin') {
-            return view('admin.adminDashboard');            //returning adminDashboard if user is an Admin
-        } elseif (Auth::user()->role === 'employee') {
-            return view('employee.employeeDashboard');      //returning employeeDashobard if user is an Employee
-        }
+        DB::table('vats')->insert([
+            'name' => 'Industrial Tax',
+            'vat%' => 15,
+            'fine%'=> 10,
+            'route'=> 'industrial'
+        ]);
+
+        DB::table('vats')->insert([
+            'name' => 'Licence Tax',
+            'vat%' => 15,
+            'fine%'=> 10,
+            'route'=> 'licence'
+        ]);
+
+        DB::table('vats')->insert([
+            'name' => 'Land Tax',
+            'vat%' => 15,
+            'fine%'=> 10,
+            'route'=> 'land'
+        ]);
+
+        DB::table('vats')->insert([
+            'name' => 'Advertizement Tax',
+            //vat and fine refered on sperate table
+            'route'=> 'advertizement'
+        ]);
     }
 }
