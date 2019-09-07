@@ -11,7 +11,8 @@ before_script:
   - mysql -e 'create database smartvat;'
   - composer install
   - php artisan key:generate
-  - php artisan migrate --seed
+  - php artisan migrate
+  - php aritsan db:seed --class=DatabaseSeeder
 
 script:
   - vendor/bin/phpunit
