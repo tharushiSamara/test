@@ -45,6 +45,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function userVat()
     {
-        return $this->hasMany('App\User_vat', 'user_id');
+        return $this->hasMany('App\User_vat', 'user_id');       //employee can be assigned to many vat categories
     }
 }

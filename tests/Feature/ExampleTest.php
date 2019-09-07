@@ -19,9 +19,9 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function accessDashboardWithoutLogin(){
+    public function accessDashboardWithoutLogin()
+    {
         $response = $this->get('/')
-                    ->see('')
-
+                    ->see('');
     }
 }

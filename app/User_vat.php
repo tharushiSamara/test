@@ -10,6 +10,6 @@ class User_vat extends Model
 
     public function vat()
     {
-        return $this->belongsTo('App\Vat', 'vat_id');
+        return $this->belongsTo('App\Vat', 'vat_id');   //each user_vat belongs to exaclty one vat id
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Vat;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,8 +12,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Vat;
 
+/**
+ * Routes related to authentication
+*/
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('root');  //site root shows the login form
 Auth::routes(['verify' => true]);                                     //authentication routes with email verification
 Route::get('/change-password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('change-password'); //show change password form
@@ -22,17 +26,23 @@ Route::name('password.')->group(function () {
     Route::post('change-password/{useId}', 'Auth\ChangePasswordController@changePassword')->name('change'); //password reset post
 });
 
-
-
+/**
+ * Routes related to admin
+*/
 Route::get('/employee-profile/{id}', 'AdminController@employeeProfile')->name('employee-profile');
 Route::get('/mangae-employee', 'AdminController@manageEmployee')->name('manage-employee');
 
 
-
+/**
+ * Routes common to admin and employee
+*/
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/language/{locale}', 'LanguageController@changeLanguage');  //language switcher
 
 
+/**
+ * Routes related to vat category (return view of the vat category)
+*/
 foreach (Vat::all() as $vat) {      //routes for all vat categories, VatPagesController contains methodes which show the forms
     Route::get('/'.$vat->route, 'VatPagesController@'.$vat->route)->name($vat->route);
 }

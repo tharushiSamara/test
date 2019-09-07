@@ -1,28 +1,33 @@
 <?php
 
-use Illuminate\Database\Seeder;
+namespace App\Http\Controllers;
 
-class VatsTableSeeder extends Seeder
+use Illuminate\Http\Request;
+use Auth;
+
+class HomeController extends Controller
 {
     /**
-     * Run the database seeds.
+     * Create a new controller instance.
      *
      * @return void
      */
-    public function run()
+    public function __construct()
     {
-        DB::table('vats')->insert([
-            'name' => 'Buisness Tax',
-            'vat%' => 10,
-            'fine%'=> 15,
-            'route'=> 'buisness'
-        ]);
+        $this->middleware(['auth'=>'verified']);  //checking for email verification
+    }
 
-        DB::table('vats')->insert([
-            'name' => 'Industrial Tax',
-            'vat%' => 10,
-            'fine%'=> 15,
-            'route'=> 'industrial'
-        ]);
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        if (Auth::user()->role === 'admin') {
+            return view('admin.adminDashboard');            //returning adminDashboard if user is an Admin
+        } elseif (Auth::user()->role === 'employee') {
+            return view('employee.employeeDashboard');      //returning employeeDashobard if user is an Employee
+        }
     }
 }
