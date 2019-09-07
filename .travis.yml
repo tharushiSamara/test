@@ -12,7 +12,7 @@ before_script:
   - composer install
   - php artisan key:generate
   - php artisan migrate
-  - php aritsan db:seed --class=DatabaseSeeder
+  - php artisan db:seed --class=DatabaseSeeder
 
 script:
   - vendor/bin/phpunit
