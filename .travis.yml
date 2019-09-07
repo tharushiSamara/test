@@ -1,0 +1,25 @@
+language: php
+
+php:
+  - 7.0
+  - 7.1
+
+services:
+  - mysql
+
+before_script:
+  - cp .env.travis .env
+  - mysql -e 'create database smart-vat;'
+  - composer install
+  - php artisan key:generate
+  - php artisan migrate --seed
+
+script:
+  - vendor/bin/phpunit
+
+notifications:
+email:
+  recipients:
+    - sabtharugc0@gmail.com
+  on_success: always
+  on_failure: always
