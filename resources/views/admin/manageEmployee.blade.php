@@ -149,7 +149,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($employees as $employee)
+ 
+                         @foreach ($employees as $employee)
                         <tr>
                             <td>{{$employee->id}}</th>
                             <td>{{$employee->name}}</td>
@@ -173,13 +174,13 @@
 
 
                         </tr>
-                        @endforeach
+                        @endforeach 
 
 
                     </tbody>
                     <thead class="thead-light">
                         <tr>
-                            <th>{{__('menu.User ID')}}</th>
+                            <th>{{__('menu.User ID')}} ASDFGH</th>
                             <th>{{__('menu.Employee Name')}}</th>
                             <th>{{__('menu.Username')}}</th>
                             <th>{{__('menu.Email')}}</th>
