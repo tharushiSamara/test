@@ -22,6 +22,6 @@ class ExampleTest extends TestCase
     public function accessDashboardWithoutLogin()
     {
         $response = $this->get('/')
-                    ->see('');
+                    ->see('Hellow');
     }
 }
