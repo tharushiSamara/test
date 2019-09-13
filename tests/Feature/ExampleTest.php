@@ -18,10 +18,4 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
-
-    public function accessDashboardWithoutLogin()
-    {
-        $response = $this->get('/')
-                    ->see('Hellow');
-    }
 }
