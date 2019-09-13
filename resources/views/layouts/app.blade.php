@@ -166,7 +166,7 @@
 		<nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
 			<div class="container-fluid">
 				{{-- Brand --}}
-				<a class="h4 mb-0 text-white  d-none d-lg-inline-block" href="javascript:history.back()">
+				<a class="h4 mb-0 text-white  d-none d-md-inline-block" href="javascript:history.back()">
 					<span> <i class="ni ni-bold-left"></i></span>
 				</a>
 
@@ -179,7 +179,7 @@
 								<span class="avatar avatar-sm rounded-circle">
 									<img alt="profile pic" src="{{ asset('assets/img/theme/girl.png') }}">
 								</span>
-								<div class="media-body ml-2 d-none d-lg-block">
+								<div class="media-body ml-2 d-lg-block">
 									<span class="mb-0  font-weight-bold">
 										{{ Auth::user()->userName }}
 									</span>
