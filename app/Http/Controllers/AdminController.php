@@ -7,6 +7,7 @@ use App\User;
 use App\Vat;
 use App\User_vat;
 use Illuminate\Support\Arr;
+use App\Http\Requests\UpdateEmployeeProfileRequest;
 
 class AdminController extends Controller
 {
@@ -30,6 +31,21 @@ class AdminController extends Controller
         
         // dd($assingedVats);
         return view('profile.employeeProfile', ['employee'=>$employee,'vats'=>$vats,'assignedVats'=>$assingedVats]);
+    }
+
+    public function updateEmployeeProfile($id, UpdateEmployeeProfileRequest $request)
+    {
+        $employee = User::findOrFail($id);
+
+        //updating new employee details
+        $employee->name = $request->name;
+        $employee->userName = $request->userName;
+        $employee->nic = $request->nic;
+        $employee->email = $request->email;
+        $employee->phone = $request->phone;
+
+        $employee->save();
+        return redirect()->back()->with('status', 'Employee details updated successfuly');
     }
 
     public function assignVatCategories(Request $request)

@@ -31,6 +31,7 @@ Route::name('password.')->group(
  * Routes related to admin
 */
 Route::get('/employee-profile/{id}', 'AdminController@employeeProfile')->name('employee-profile');
+Route::put('/employee-profile/{id}', 'AdminController@updateEmployeeProfile')->name('update-employee');
 Route::get('/mangae-employee', 'AdminController@manageEmployee')->name('manage-employee');
 Route::post('/assign-vat', 'AdminController@assignVatCategories')->name('assign-vat');
 
@@ -44,13 +45,14 @@ Route::get('/profile', 'EmployeeController@myProfile')->name('my-profile');
 
 
 
+
 /**
  * Routes related to vat category (return view of the vat category)
 */
-//try {
-//    foreach (Vat::all() as $vat) {      //routes for all vat categories, VatPagesController contains methodes which show the forms
-//        Route::get('/'.$vat->route, 'VatPagesController@'.$vat->route)->name($vat->route);
-//    }
-//} catch (Exception $e) {
-//    echo "dynamic routes will only work after migration \n";
-//}
+try {
+    foreach (Vat::all() as $vat) {      //routes for all vat categories, VatPagesController contains methodes which show the forms
+        Route::get('/'.$vat->route, 'VatPagesController@'.$vat->route)->name($vat->route);
+    }
+} catch (Exception $e) {
+    echo "dynamic routes will only work after migration \n";
+}
