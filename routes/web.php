@@ -54,3 +54,7 @@ Route::get('/profile', 'EmployeeController@myProfile')->name('my-profile');
 //} catch (Exception $e) {
 //    echo "dynamic routes will only work after migration \n";
 //}
+
+// ------latest Payment....
+
+Route::get('/latest','latest@latestPayment');
