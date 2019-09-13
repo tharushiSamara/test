@@ -114,10 +114,11 @@
                         <h3 class="mb-0">Employee Listing</h3>
                     </div>
                     <div class="col-6 text-right">
-                        <a class="btn btn-icon btn-success text-white" href="{{route('register')}}">
+                        <button class="btn btn-icon btn-3 btn-success text-white"
+                            onclick="javascript:window.open('{{route('register')}}','_self')">
                             <span><i class="fas fa-user-plus"></i></span>
                             <span class="btn-inner--text">Register</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

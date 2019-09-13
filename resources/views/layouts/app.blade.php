@@ -115,12 +115,7 @@
 
 				{{-- Navigation --}}
 				<ul class="navbar-nav">
-					<li class="nav-item  class=" active>
-						<a class=" nav-link " href="{{  url('/') }}">
-							<i class="ni ni-tv-2 text-primary"></i>
-							{{ __('menu.Dashboard') }}
-						</a>
-					</li>
+
 					@yield('sidebar')
 				</ul>
 
