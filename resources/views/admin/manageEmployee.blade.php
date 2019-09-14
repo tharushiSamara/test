@@ -149,8 +149,32 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <tr>
+                            <td>Brielle Williamson</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td>61</td>
+                            <td>2012/12/02</td>
+                            <td>$372,000</td>
+                        </tr>
+                        <tr>
+                            <td><a href="{{route('my-profile')}}">Herrod Chandler</a></td>
+                            <td>Sales Assistant</td>
+                            <td>San Francisco</td>
+                            <td>59</td>
+                            <td>2012/08/06</td>
+                            <td>$137,500</td>
+                        </tr>
+                        <tr>
+                            <td>Rhona Davidson</td>
+                            <td>Integration Specialist</td>
+                            <td>Tokyo</td>
+                            <td>55</td>
+                            <td>2010/10/14</td>
+                            <td>$327,900</td>
+                        </tr>
  
-                         @foreach ($employees as $employee)
+                         <!-- @foreach ($employees as $employee)
                         <tr>
                             <td>{{$employee->id}}</th>
                             <td>{{$employee->name}}</td>
@@ -174,7 +198,7 @@
 
 
                         </tr>
-                        @endforeach 
+                        @endforeach  -->
 
 
                     </tbody>
