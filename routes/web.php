@@ -60,3 +60,5 @@ try {
 }
 
 Route::get('/latest', 'latest@latestPayment'); // display latset payment
+
+
