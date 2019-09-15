@@ -33,7 +33,7 @@ Route::get('/employee-profile/{id}', 'AdminController@employeeProfile')->name('e
 Route::put('/employee-profile/{id}', 'AdminController@updateEmployeeProfile')->name('update-employee');
 Route::get('/mangae-employee', 'AdminController@manageEmployee')->name('manage-employee');
 Route::post('/assign-vat', 'AdminController@assignVatCategories')->name('assign-vat');
-
+Route::get('/gloabl-conf', 'AdminController@globalConfiguration')->name('global-conf');
 
 /**
  * Routes common to admin and employee
@@ -58,4 +58,8 @@ try {
     echo "dynamic routes will only work after migration \n";
 }
 
-Route::get('/latest', 'latest@latestPayment'); // display latset payment
+
+
+Route::get('/latest', function () {
+    return view('admin.globalConfiguration');
+}); // display latset payment

@@ -13,7 +13,7 @@
 </li>
 
 <li class="nav-item">
-    <a class="nav-link " href="#">
+    <a class="nav-link {!! url()->current() == route('global-conf') ? 'active' : ''!!}" href="{{route('global-conf')}}">
         <i class="fas fa-cogs text-red"></i></i> {{__('menu.Configurations')}}
     </a>
 </li>

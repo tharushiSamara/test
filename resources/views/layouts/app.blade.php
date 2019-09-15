@@ -257,6 +257,12 @@
 	{{-- Core --}}
 	<script src="{{ asset('assets/js/plugins/jquery/dist/jquery.min.js')}}"></script>
 	<script src="{{ asset('assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+	{{-- enabling bootstrap tooltip --}}
+	<script>
+		$(document).ready(function(){
+		  $('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
 	{{-- Argon JS --}}
 	{{-- <script src="{{ asset('assets/js/argon-dashboard.js')}}"></script> --}}
 	@stack('script')
