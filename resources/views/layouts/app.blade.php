@@ -75,10 +75,6 @@
 							<i class="ni ni-settings-gear-65"></i>
 							<span>{{ __('menu.Language') }}</span>
 						</a>
-						<a href="{{route('change-password')}}" class="dropdown-item">
-							<i class="ni ni-lock-circle-open"></i>
-							<span>{{__('menu.Change Password')}}</span>
-						</a>
 
 						<div class="dropdown-divider"></div>
 						<a href="#" class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -196,10 +192,7 @@
 								<i class="ni ni-settings-gear-65"></i>
 								<span>{{ __('menu.Language') }}</span>
 							</a>
-							<a href="{{route('change-password')}}" class="dropdown-item">
-								<i class="ni ni-lock-circle-open"></i>
-								<span>{{__('menu.Change Password')}}</span>
-							</a>
+
 
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
