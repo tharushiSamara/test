@@ -16,7 +16,7 @@ return [
     'Dashboard' => 'Dashboard',
     'Language' => 'සිංහල',
     'Employees' => 'Employees',
-    'Employees' => 'employees',
+    'employee' => 'employee',
     'admin'=>'admin',
 
     'User ID'=>'User ID',
@@ -34,4 +34,8 @@ return [
     'My profile'=>'My profile',
     'Logout'=>'Logout',
     'Change Password'=>'Change Password',
+
+    'Configurations' => 'Configurations',
+    'VAT Categories'=>'VAT Categories'
+
 ];

@@ -13,14 +13,22 @@
 @section('header')
 
 <div class="container-fluid d-flex align-items-center">
-	<div class="row">
-		<div class="col">
-			<h1 class="display-2 text-white">Welcome {{Auth::user()->name}}</h1>
-			<p class="text-white mt-0 mb-5">Access level : <span class="text-uppercase">{{Auth::user()->role}}</span>
-			</p>
 
+	<div class="col">
+		<h1 class="display-2 text-white">Welcome {{Auth::user()->name}}</h1>
+		<p class="text-white mt-0 mb-5">Access level : <span class="text-uppercase">{{Auth::user()->role}}</span>
+		</p>
+		@if (session('status'))
+		<div class="alert alert-success alert-dismissible fade show col-8 mb-5" role="alert">
+			<span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+			<span class="alert-inner--text mx-2"><strong class="mx-1">Success!</strong>{{session('status')}}</span>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
 		</div>
+		@endif
 	</div>
+
 </div>
 @endsection
 
@@ -173,20 +181,76 @@
 							</div>
 						</div>
 					</div>
+				</form>
+				<form method="POST" action="{{ route('password.change',['userId'=>Auth::user()->id]) }}">
+					@csrf
 					<hr class="my-4">
 					<!-- Description -->
-					<h6 class="heading-small text-muted mb-4">About me</h6>
+					<h6 class="heading-small text-muted mb-4">Change Password</h6>
+					<!-- Description -->
 					<div class="pl-lg-4">
-						<div class="form-group">
-							<label>About Me</label>
-							<textarea rows="4" class="form-control form-control-alternative"
-								placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+
+						<div class=" form-group row">
+							<label for="password"
+								class="col-md-3 col-form-label form-control-label">{{ __('password') }}</label>
+
+							<div class="col-md-9">
+								<input id="password" type="password"
+									class="form-control @error('password') is-invalid @enderror" name="password"
+									required>
+
+								@error('password')
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $message }}</strong>
+								</span>
+								@enderror
+							</div>
 						</div>
-					</div>
+
+
+						<div class="form-group row">
+							<label for="new_password"
+								class="col-md-3 col-form-label form-control-label">{{ __('New Password') }}</label>
+
+							<div class="col-md-9">
+								<input id="new_password" type="password"
+									class="form-control @error('new_password') is-invalid @enderror" name="new_password"
+									required>
+
+								@error('new_password')
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $message }}</strong>
+								</span>
+								@enderror
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label for="new_password-confirm"
+								class="col-md-3 col-form-label form-control-label">{{ __('Confirm Password') }}</label>
+
+							<div class="col-md-9">
+								<input id="new_password-confirm" type="password" class="form-control"
+									name="new_password_confirmation" required>
+							</div>
+						</div>
+
+
+						<div class="form-group  ">
+							<button type="submit" class="btn btn-primary float-right">
+								{{ __('Reset Password') }}
+							</button>
+
+						</div>
 				</form>
 			</div>
+
 		</div>
+
+
 	</div>
+
+</div>
 </div>
 
 @endsection
