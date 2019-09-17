@@ -126,10 +126,10 @@
 				<form method="POST" action="{{route('register')}}"> 
 					@csrf
 					<div class="form-group row pt-3">
-						<label for="example-text-input" class="col-md-2 col-form-label form-control-label ">Name</label>
+						<label for="example-text-input" class="col-md-2 col-form-label form-control-label ">First Name</label>
 						<div class="col-md-10 ">
-							<input class="form-control @error('name') is-invalid  @enderror" type="text" value="{{old('name')}}"
-								id="name" name="name">
+							<input class="form-control @error('f_name') is-invalid  @enderror" type="text" value="{{old('f_name')}}"
+								id="f_name" name="f_name">
 							@error('name')
 							<span class="invalid-feedback" role="alert">
 								<strong>{{ $message }}</strong>
@@ -138,11 +138,11 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="example-search-input" class="col-md-2 col-form-label form-control-label">Username</label>
+						<label for="example-search-input" class="col-md-2 col-form-label form-control-label">Last Name</label>
 						<div class="col-md-10">
-							<input class="form-control @error('userName') is-invalid @enderror" type="text"
-								value="{{old('userName')}}" id="userName" name="userName">
-							@error('userName')
+							<input class="form-control @error('L_name') is-invalid @enderror" type="text"
+								value="{{old('L_name')}}" id="L_name" name="L_name">
+							@error('L_name')
 							<span class="invalid-feedback" role="alert">
 								<strong>{{ $message }}</strong>
 							</span>

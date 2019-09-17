@@ -29,5 +29,6 @@ Route::name('password.')->group(function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/language/{locale}', 'LanguageController@changeLanguage');  //language switcher
 
-Route::get('/VAT_Payer','PayerController@payer')->name('VAT_Payer'); //
+Route::get('/Payer','PayerController@payer')->name('VAT_Payer'); //
 Route::get('/Reg','PayerController@register');
+Route::get('/payerProfile','PayerController@profile');
